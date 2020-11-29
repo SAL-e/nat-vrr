@@ -1,0 +1,11 @@
+vrrp_instance nat_vrr_ips {
+ state MASTER
+ interface ens19
+ virtual_router_id 12
+ priority 150
+ advert_int 1
+ virtual_ipaddress {
+  10.0.20.6
+ }
+ notify "/usr/local/bin/keepalived_notify.sh"
+}
